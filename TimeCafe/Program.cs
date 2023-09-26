@@ -1,3 +1,8 @@
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using TimeCafe.DAL;
+
 namespace TimeCafe
 {
     public class Program
@@ -8,7 +13,14 @@ namespace TimeCafe
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
-
+            var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+            builder.Services.AddDbContext<TimeCafeContext>(options =>
+            options.UseSqlServer(connectionString));
+            builder.Services.AddIdentity<IdentityUser, IdentityRole>(
+            options => 
+            {
+            options.SignIn.RequireConfirmedAccount = false;
+            }).AddEntityFrameworkStores<TimeCafeContext>();
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
