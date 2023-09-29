@@ -16,3 +16,13 @@ html {
 body {
   margin-bottom: 60px;
 }
+.form-control {
+    margin: auto;
+    width: 70%
+}
+.card{
+    padding:10px;
+}
+.input-field {
+    margin: 10px;
+}

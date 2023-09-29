@@ -3,34 +3,36 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-md">
-        </div>
-        <div class="col-md-auto">
-            <div class="card" style="width: 15rem;">
-                <h5 class="card-title text-center">Sign In:</h5>
-                <form method="post" asp-controller="Account" asp-action="Login">
-                    <div asp-validation-summary="ModelOnly"></div>
-                    <div>
-                        <label asp-for="Email"></label><br />
-                        <input class="text-center" asp-for="Email" />
-                        <span asp-validation-for="Email"></span>
-                    </div>
-                    <div>
-                        <label asp-for="Password"></label><br />
-                        <input asp-for="Password" />
-                        <span asp-validation-for="Password"></span>
-                    </div>
-                    <div>
-                        <label asp-for="RememberMe"></label><br />
-                        <input asp-for="RememberMe" />
-                    </div>
-                    <div class="text-center">
-                        <input class="btn btn-primary" type="submit" value="Sign In" />
-                    </div>
-                </form>
+        <div class="col-md">      
+            <div class="col-md-auto">
+                <div class="card">
+                    <form asp-controller="Account" asp-action="Login">
+                        <h5 class="card-title text-center">Sign In:</h5>
+                        <div class="input-field">
+                            <input type="email" asp-for="Email" class="form-control" placeholder="Email"/>
+                            <span asp-validation-for="Email"></span>
+                        </div>
+                        <div class="input-field">
+                            <input type="password" asp-for="Password" class="form-control" placeholder="Password" />
+                            <span asp-validation-for="Password"></span>
+                        </div>
+                        <div class="row mb-4">
+                            <div class="col d-flex justify-content-center">
+                                <div class="form-check">
+                                    <input class="form-check-input" asp-for="RememberMe" type="checkbox" value="" id="form2Example31" checked />
+                                    <label class="form-check-label" asp-for="RememberMe" for="form2Example31"> Remember me </label>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <a href="#!">Forgot password?</a>
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <input  type="submit" value="Sign In" class="btn btn-primary btn-block mb-4"/>
+                        </div>
+                    </form>                    
+                </div>
             </div>
         </div>
-        <div class="col-md">
-        </div>
-    </div>
+    </div>   
 </div>
