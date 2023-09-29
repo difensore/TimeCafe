@@ -1,36 +1,30 @@
 ﻿@using TimeCafe.DAL.Models.ViewModels
 @model RegisterViewModel
 <div class="container">
-  <div class="row">
-      <div class="col-md">
-      </div>
-      <div class="col-md-auto">
-          <div class="card" style="width: 15rem;">
-              <h5 class="card-title text-center">Sing Up</h5>
-          <form method="post" asp-controller="Account" asp-action="Register">
-    <div asp-validation-summary="ModelOnly"></div>
-    <div>
-        <label asp-for="Email"></label><br />
-        <input asp-for="Email"/>
-        <span asp-validation-for="Email"></span>
-    </div>    
-    <div>
-        <label asp-for="Password"></label><br />
-        <input asp-for="Password" />
-        <span asp-validation-for="Password"></span>
-    </div>
-    <div>
-        <label asp-for="PasswordConfirmation"></label><br />
-        <input asp-for="PasswordConfirmation" />
-        <span asp-validation-for="PasswordConfirmation"></span>
-    </div>
-    <div>
-        <input class="btn btn-primary" type="submit" value="Sign Up"/>
-    </div>
-</form>
+    <div class="row">
+        <div class="col-md">
+            <div class="col-md-auto">
+                <div class="card">
+                    <form asp-controller="Account" asp-action="Login">
+                        <h5 class="card-title text-center">Sign In:</h5>
+                        <div class="input-field">
+                            <input type="email" asp-for="Email" class="form-control" placeholder="Email" />
+                            <span asp-validation-for="Email"></span>
+                        </div>
+                        <div class="input-field">
+                            <input type="password" asp-for="Password" class="form-control" placeholder="Password" />
+                            <span asp-validation-for="Password"></span>
+                        </div>
+                        <div class="input-field">
+                            <input type="password" asp-for="PasswordConfirmation" class="form-control" placeholder="Confirm password" />
+                            <span asp-validation-for="PasswordConfirmation"></span>
+                        </div>                                                 
+                        <div class="text-center">
+                            <input type="submit" value="Sign In" class="btn btn-primary btn-block mb-4" />
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="col-md">
-      </div>
-  </div>
+    </div>
 </div>
