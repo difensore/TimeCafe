@@ -5,7 +5,9 @@ VisualStudioVersion = 17.7.34031.279
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TimeCafe", "TimeCafe.csproj", "{BE121212-6672-4A3C-A5FD-06CBF016F69D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeCafe.DAL", "..\TimeCafe.DAL\TimeCafe.DAL.csproj", "{C49C9057-2A46-4E97-B916-27E19F16DD1A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TimeCafe.DAL", "..\TimeCafe.DAL\TimeCafe.DAL.csproj", "{C49C9057-2A46-4E97-B916-27E19F16DD1A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeCafe.Services", "..\TimeCafe.Services\TimeCafe.Services.csproj", "{C482D0B3-4116-43D9-BC23-0FBB81B4ACBD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{C49C9057-2A46-4E97-B916-27E19F16DD1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C49C9057-2A46-4E97-B916-27E19F16DD1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C49C9057-2A46-4E97-B916-27E19F16DD1A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C482D0B3-4116-43D9-BC23-0FBB81B4ACBD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C482D0B3-4116-43D9-BC23-0FBB81B4ACBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C482D0B3-4116-43D9-BC23-0FBB81B4ACBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C482D0B3-4116-43D9-BC23-0FBB81B4ACBD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

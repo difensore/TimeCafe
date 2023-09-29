@@ -2,6 +2,8 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using TimeCafe.DAL;
+using TimeCafe.Services.Interfaces;
+using TimeCafe.Services.Services;
 
 namespace TimeCafe
 {
@@ -21,6 +23,7 @@ namespace TimeCafe
             {
             options.SignIn.RequireConfirmedAccount = false;
             }).AddEntityFrameworkStores<TimeCafeContext>();
+            builder.Services.AddTransient<IIdentityProvider, IdentityProvider>();
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
