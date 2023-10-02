@@ -9,7 +9,7 @@ namespace TimeCafe.DAL.Models.ViewModels
         /// </summary>
         [Required]
         [Display(Name = "Email")]
-        public string? Email { get; set; }
+        public string Email { get; set; }
 
         /// <summary>
         /// Gets and sets password
@@ -18,7 +18,7 @@ namespace TimeCafe.DAL.Models.ViewModels
         [DataType(DataType.Password)]
         [StringLength(50, ErrorMessage = "Password should be minimum 6 and maximum 50 symbols.", MinimumLength = 6)]
         [Display(Name = "Password")]
-        public string? Password { get; set; }
+        public string Password { get; set; }
 
         /// <summary>
         /// Value for remember the current user

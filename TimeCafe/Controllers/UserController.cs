@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 using TimeCafe.DAL.Models.ViewModels;
@@ -46,10 +47,41 @@ namespace TimeCafe.Controllers
                     foreach (var error in dictionary.ElementAt(0).Key.Errors)
                     {
                         ModelState.AddModelError(string.Empty, error.Description);
+                        throw new Exception(error.Description);
                     }
                 }
             }
+
             return View(registerViewModel);
-        }        
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Login(LoginViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                var result =
+                    await signInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, false);
+
+                if (result.Succeeded)
+                {
+                    return RedirectToAction("Index", "Home");
+                }
+                else
+                {
+                    ModelState.AddModelError("", "Wrong Login or Password");
+                }
+            }
+
+            return View("LoginPage", model);
+        }
+
+        [Authorize]
+        public async Task<IActionResult> LogOutAsync()
+        {
+            await signInManager.SignOutAsync();
+
+            return RedirectToAction("Index", "Home");
+        }
     }
 }
