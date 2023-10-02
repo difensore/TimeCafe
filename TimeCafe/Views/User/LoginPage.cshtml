@@ -6,7 +6,7 @@
         <div class="col-md">      
             <div class="col-md-auto">
                 <div class="card">
-                    <form asp-controller="Account" asp-action="Login">
+                    <form asp-controller="User" asp-action="Login">
                         <h5 class="card-title text-center">Sign In:</h5>
                         <div class="input-field">
                             <input type="email" asp-for="Email" class="form-control" placeholder="Email"/>
@@ -19,8 +19,8 @@
                         <div class="row mb-4">
                             <div class="col d-flex justify-content-center">
                                 <div class="form-check">
-                                    <input class="form-check-input" asp-for="RememberMe" type="checkbox" value="" id="form2Example31" checked />
-                                    <label class="form-check-label" asp-for="RememberMe" for="form2Example31"> Remember me </label>
+                                    <input class="form-check-input" asp-for="RememberMe" type="checkbox"/>
+                                    <label class="form-check-label"> Remember me </label>
                                 </div>
                             </div>
                             <div class="col">
